@@ -1,0 +1,21 @@
+.App {
+  &.light-theme {
+    
+  }
+
+  &.dark-theme {
+    
+  }
+}
+
+$text-primary: var(--text-primary);
+$theme-color-primary: var(--theme-color-primary);
+$theme-color-secondary: var(--theme-color-secondary);
+$bg-primary: var(--bg-primary);
+$bg-secondary: var(--bg-secondary);
+$accent-primary: var(--accent-primary);
+$border: var(--border);
+$shadow: var(--shadow);
+$completed-bg: var(--completed-bg);
+$deny-bg: var(--deny-bg);
+$time-wrapper-bg: var(--time-wrapper) 
