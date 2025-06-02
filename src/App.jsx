@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Contexts/AuthContext";
 import Login from "./pages/login/Login";
-// import Register from "./pages/register/Register";
+import Register from "./pages/register/Register";
 
 function App() {
   const { isFetchData } = useContext(AuthContext);
@@ -24,7 +24,7 @@ function App() {
       <Toaster />
       <Routes>
         <Route path="/login" element={<Login />} />
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
