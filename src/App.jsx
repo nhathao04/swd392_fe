@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { AuthContext } from "./Contexts/AuthContext";
+import { AuthContext } from "./contexts/AuthContext";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 

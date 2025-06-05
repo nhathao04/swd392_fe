@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { getUserInformation } from '../../apis/authentication'
 import background from '../../assets/Photos/background/login-image3.jpg'
 import logo from '../../assets/Photos/logo/logo.svg'
-import { AuthContext } from '../../Contexts/AuthContext'
+import { AuthContext } from '../../contexts/AuthContext'
 import { getToken } from '../../utils/storageUtils'
 import './Register.scss'
 import toast from 'react-hot-toast'
@@ -14,7 +14,7 @@ import toast from 'react-hot-toast'
 function Register() {
     const navigate = useNavigate()
     const { setCurrentUser } = useContext(AuthContext)
-    
+
     // Form state
     const [formData, setFormData] = useState({
         fullName: '',
@@ -68,13 +68,13 @@ function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
+
         if (!validateForm()) {
             return
         }
 
         setIsLoading(true)
-        
+
         try {
             const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/auth/register`, {
                 method: 'POST',
@@ -259,8 +259,8 @@ function Register() {
                             </div>
 
                             {/* Register Button */}
-                            <button 
-                                type="submit" 
+                            <button
+                                type="submit"
                                 className="btn-primary"
                                 disabled={isLoading}
                             >
@@ -284,18 +284,18 @@ function Register() {
 
                             {/* Social Login */}
                             <div className="social-login">
-                                <button 
+                                <button
                                     type="button"
-                                    className="btn-social btn-google" 
+                                    className="btn-social btn-google"
                                     onClick={handleGoogleLogin}
                                 >
                                     <Icon icon="devicon:google" />
                                     <span>Google</span>
                                 </button>
 
-                                <button 
+                                <button
                                     type="button"
-                                    className="btn-social btn-facebook" 
+                                    className="btn-social btn-facebook"
                                     onClick={handleFacebookLogin}
                                 >
                                     <Icon icon="devicon:facebook" />

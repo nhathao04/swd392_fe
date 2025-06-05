@@ -4,10 +4,12 @@ import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getUserInformation } from '../../apis/authentication'
 import logo from '../../assets/Photos/logo/logo.svg'
-import { AuthContext } from '../../Contexts/AuthContext'
+import { AuthContext } from '../../contexts/AuthContext'
 import { getToken } from '../../utils/storageUtils'
 import './Login.scss'
 import toast from 'react-hot-toast'
+import { FacebookButton } from './components/FacebookButton'
+import { GoogleButton } from './components/GoogleButton'
 
 function Login() {
     const navigate = useNavigate()
@@ -202,14 +204,16 @@ function Login() {
                                     <span>Google</span>
                                 </button>
 
-                                <button
+                                {/* <button
                                     type="button"
                                     className="btn-social btn-facebook"
                                     onClick={handleFacebookLogin}
                                 >
                                     <Icon icon="devicon:facebook" />
                                     <span>Facebook</span>
-                                </button>
+                                </button> */}
+                                <GoogleButton />
+                                <FacebookButton />
                             </div>
 
                             {/* Register Link */}
