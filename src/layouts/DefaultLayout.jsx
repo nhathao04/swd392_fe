@@ -1,17 +1,20 @@
 import PropTypes from 'prop-types'
 import {useContext} from 'react'
-import {Footer, Header} from '../Components'
-import {HeaderMentor} from '../Components/Modal'
+import {Footer, Header} from '../components/index'
+// import {HeaderMentor} from '../Components/Modal'
 import {AuthContext} from '../Contexts/AuthContext'
+import './DefaultLayout.scss'
 
 function DefaultLayout({children}) {
     const {currentUser} = useContext(AuthContext)
     return (
-        <>
+        <div className="default-layout">
             <Header/>
-            {children}
+            <main className="main-content">
+                {children}
+            </main>
             <Footer/>
-        </>
+        </div>
     )
 }
 

@@ -4,6 +4,8 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Contexts/AuthContext";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import Home from "./pages/Home/Home";
+import DefaultLayout from "./layouts/DefaultLayout";
 
 function App() {
   const { isFetchData } = useContext(AuthContext);
@@ -25,6 +27,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+         <Route path="/" element={<DefaultLayout><Home /></DefaultLayout>} />
+        
       </Routes>
     </>
   );
